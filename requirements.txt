@@ -1,0 +1,10 @@
+grpcio==1.62.0
+grpcio-tools==1.62.0
+protobuf==4.25.3
+llama-cpp-python==0.2.38
+pyttsx3==2.90
+pydub==0.25.1
+streamlit==1.32.0
+httpx==0.26.0
+python-multipart==0.0.7
+streamlit-audiorec==0.1.3 

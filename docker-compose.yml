@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  grpc-server:
+    build: .
+    command: grpc
+    volumes:
+      - ./models:/app/models
+      - ./generated:/app/generated
+    ports:
+      - "50051:50051"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import grpc; channel = grpc.insecure_channel('localhost:50051'); channel.close()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  rest-api:
+    build: .
+    command: rest
+    depends_on:
+      - grpc-server
+    environment:
+      - GRPC_SERVER=grpc-server:50051
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  ui:
+    build: .
+    command: ui
+    depends_on:
+      - rest-api
+    environment:
+      - API_URL=http://rest-api:8000/api
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  models:
+  generated: 

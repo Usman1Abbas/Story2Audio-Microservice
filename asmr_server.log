@@ -1,0 +1,58 @@
+2025-05-05 20:52:57,104 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-05-05 20:52:57,104 - __main__ - ERROR - MISTRAL_MODEL_PATH environment variable not set
+2025-05-05 20:52:57,104 - __main__ - ERROR - Fatal error in serve(): MISTRAL_MODEL_PATH environment variable is required
+2025-05-05 20:52:57,104 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\Usman\Desktop\NLP\asmr_server.py", line 340, in serve
+    raise ValueError("MISTRAL_MODEL_PATH environment variable is required")
+ValueError: MISTRAL_MODEL_PATH environment variable is required
+
+2025-05-05 20:52:57,104 - __main__ - ERROR - Fatal error in main: MISTRAL_MODEL_PATH environment variable is required
+2025-05-05 20:52:57,104 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\Usman\Desktop\NLP\asmr_server.py", line 387, in <module>
+    asyncio.run(serve())
+  File "D:\Anaconda\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Usman\Desktop\NLP\asmr_server.py", line 340, in serve
+    raise ValueError("MISTRAL_MODEL_PATH environment variable is required")
+ValueError: MISTRAL_MODEL_PATH environment variable is required
+
+2025-05-05 20:55:23,676 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-05-05 20:55:23,676 - __main__ - INFO - Starting server with model path: D:\mistral-7b-instruct-v0.1.Q4_K_M (1).gguf
+2025-05-05 20:55:23,692 - grpc._cython.cygrpc - DEBUG - Using AsyncIOEngine.POLLER as I/O engine
+2025-05-05 20:55:23,692 - __main__ - INFO - Attempting to load model from D:\mistral-7b-instruct-v0.1.Q4_K_M (1).gguf
+2025-05-05 20:55:26,092 - __main__ - INFO - LLM model loaded successfully
+2025-05-05 20:55:26,092 - __main__ - INFO - Starting gRPC server on [::]:50051
+2025-05-05 20:55:47,384 - __main__ - INFO - Generating story and audio for topic: alien abductions
+2025-05-05 20:55:47,384 - __main__ - INFO - Received GenerateStory request for topic: alien abductions
+2025-05-05 20:55:47,384 - __main__ - INFO - Generating story with parameters: max_tokens=1000, min_tokens=50, temperature=0.10000000149011612
+2025-05-05 20:55:47,392 - __main__ - ERROR - Error generating story: Llama.__call__() got an unexpected keyword argument 'min_tokens'
+2025-05-05 20:55:47,392 - __main__ - ERROR - Error in GenerateStory: Failed to generate story: Llama.__call__() got an unexpected keyword argument 'min_tokens'
+2025-05-05 20:55:47,394 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\Usman\Desktop\NLP\asmr_server.py", line 90, in _generate_story
+    output = self.llm(
+             ^^^^^^^^^
+TypeError: Llama.__call__() got an unexpected keyword argument 'min_tokens'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Usman\Desktop\NLP\asmr_server.py", line 252, in GenerateStory
+    story, file_path = await loop.run_in_executor(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usman\Desktop\NLP\asmr_server.py", line 254, in <lambda>
+    lambda: self._generate_story(request.topic, max_tokens, min_tokens, temperature)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usman\Desktop\NLP\asmr_server.py", line 108, in _generate_story
+    raise RuntimeError(f"Failed to generate story: {e}")
+RuntimeError: Failed to generate story: Llama.__call__() got an unexpected keyword argument 'min_tokens'
+
