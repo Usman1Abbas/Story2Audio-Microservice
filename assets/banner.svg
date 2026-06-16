@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-label="Story2Audio — gRPC + REST microservice that turns story text into narrated ASMR audio">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0d1b2a"/>
-      <stop offset="0.55" stop-color="#125a4d"/>
-      <stop offset="1" stop-color="#1b9c85"/>
+      <stop offset="0" stop-color="#0a1733"/>
+      <stop offset="0.55" stop-color="#1e40af"/>
+      <stop offset="1" stop-color="#38bdf8"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.82" cy="0.25" r="0.6">
-      <stop offset="0" stop-color="#e9c46a" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#e9c46a" stop-opacity="0"/>
+      <stop offset="0" stop-color="#bae6fd" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#bae6fd" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="380" rx="20" fill="url(#bg)"/>
   <rect width="1200" height="380" rx="20" fill="url(#glow)"/>
 
   <!-- MOTIF: open book (text) flowing into a speaker + sound waves (audio) -->
-  <g transform="translate(980,190)" stroke="#e9c46a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+  <g transform="translate(980,190)" stroke="#bae6fd" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
     <!-- open book -->
     <path d="M-118 -38 C -100 -50, -78 -50, -60 -38 L -60 40 C -78 28, -100 28, -118 40 Z"/>
     <path d="M-60 -38 C -42 -50, -20 -50, -2 -38 L -2 40 C -20 28, -42 28, -60 40 Z"/>
@@ -32,7 +32,7 @@
 
   <!-- wordmark -->
   <text x="80" y="160" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="78" font-weight="800" fill="#ffffff">Story2Audio</text>
-  <text x="84" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#e9c46a">TEXT-TO-NARRATED-AUDIO MICROSERVICE</text>
-  <text x="84" y="288" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#dcefe9">Turn story text into immersive ASMR audio over gRPC and REST.</text>
-  <text x="84" y="324" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" fill="#9ec9bf">Python · gRPC · FastAPI · pyttsx3 · pydub · Docker Compose</text>
+  <text x="84" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#bae6fd">TEXT-TO-NARRATED-AUDIO MICROSERVICE</text>
+  <text x="84" y="288" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#f0f9ff">Turn story text into immersive ASMR audio over gRPC and REST.</text>
+  <text x="84" y="324" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" fill="#7dd3fc">Python · gRPC · FastAPI · pyttsx3 · pydub · Docker Compose</text>
 </svg>
